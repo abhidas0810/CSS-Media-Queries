@@ -1,25 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MQ LAYOUT-3</title>
     <style>
-        #nav{
-            background-color: yellow;
+      #nav {
+        margin: 30px auto;
+        font-size: 50px;
+        font-weight: bolder;
+        padding: 10px;
+        background-color: yellow;
+      }
+      #outer > div:first-child {
+        background-color: red;
+        padding: 20px;
+      }
+      #outer {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 400px;
+        gap: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #outer > div:last-child {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+      }
+      #outer > div:last-child > div {
+        border: 1px solid white;
+        background-color: greenyellow;
+        padding: 20px;
+      }
+      @media all and (min-width: 480px) and (max-width: 720px) {
+        #outer {
+          grid-template-columns: 1fr;
+          grid-template-rows: 200px 100px;
+          gap: 20px;
+          font-size: 20px;
+          font-weight: bold;
         }
+        #outer > div:last-child {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 100%;
+          gap: 10px;
+        }
+      }
+      @media all and (min-width: 300px) and (max-width: 479px) {
+        #outer {
+          grid-template-columns: 1fr;
+          grid-template-rows: 200px 400px;
+          gap: 20px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        #outer > div:last-child {
+          grid-template-columns: 100%;
+          grid-template-rows: repeat(3, 1fr);
+          gap: 10px;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="nav">Navigation</div>
     <div id="outer">
-        <div>Left Box</div>
-        <div>
-            <div>Right Box1</div>
-            <div>Right Box2</div>
-            <div>Right Box3</div>
-        </div>
+      <div>Left Box</div>
+      <div>
+        <div>Right Box1</div>
+        <div>Right Box2</div>
+        <div>Right Box3</div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
